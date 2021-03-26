@@ -1,0 +1,6 @@
+{
+    "require": {
+        "roots/wordpress": "^5.7",
+        "johnpbloch/wordpress": "^5.7"
+    }
+}
