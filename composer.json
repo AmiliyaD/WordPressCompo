@@ -2,5 +2,11 @@
     "require": {
         "roots/wordpress": "^5.7",
         "johnpbloch/wordpress": "^5.7"
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ]
 }
