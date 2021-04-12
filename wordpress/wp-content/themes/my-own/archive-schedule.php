@@ -1,4 +1,11 @@
-<?php get_header() ?>
+<?php
+/* 
+Template Name: Шаблон для расписания
+*/
+get_header();
+
+if (!is_home()):
+?>
 
 <main class="main-content">
       <div class="wrapper">
@@ -146,4 +153,5 @@
         </div>
       </div>
     </main>
+    <?php endif; ?>
 <?php get_footer() ?>

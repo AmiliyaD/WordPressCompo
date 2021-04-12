@@ -1,4 +1,8 @@
-<?php get_header() ?>
+<?php 
+/* 
+Template Name: Шаблон для цен
+*/
+get_header() ?>
 
 <main class="main-content">
       <h1 class="sr-only">Цены на наши услуги и клубные карты</h1>

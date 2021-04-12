@@ -1,4 +1,8 @@
-<?php get_header() ?>
+<?php 
+/* 
+Template Name: Шаблон для тренеров
+*/
+get_header() ?>
 
 <main class="main-content">
       <div class="wrapper">

@@ -1,4 +1,10 @@
-<?php get_header() ?>
+<?php 
+/* 
+Template Name: Шаблон для услуг
+*/
+get_header();
+if (!is_home()):
+?>
 
 <main class="main-content">
       <h1 class="sr-only">Услуги</h1>
@@ -51,4 +57,5 @@
         </ul>
       </div>
     </main>
+    <?php endif; ?>
 <?php get_footer() ?>
