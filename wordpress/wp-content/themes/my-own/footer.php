@@ -52,6 +52,15 @@
               </li>
             </ul>
           </nav> -->
+          <?php 
+wp_nav_menu([
+  'theme_location' => 'menu-footer',
+  'conatiner' => 'nav',
+  'conatiner_class'=> 'main-navigation',
+  'menu_class' => 'main-navigation__list',
+  'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+])
+?>
           <?php if(is_active_sidebar('si_footer')) {
             dynamic_sidebar('si_footer');
           } ?>

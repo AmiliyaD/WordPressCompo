@@ -26,7 +26,7 @@ if ( is_home() ):
                 </figure>
                 <div class="last-post__wrap">
                   <h3 class="last-post__h"><?php the_title() ?></h3>
-                  <p class="last-post__text"> Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. </p>
+                  <p class="last-post__text"> <?php echo get_the_excerpt()?> </p>
                   <span class="last-post__more link-more">Подробнее</span>
                 </div>
               </a>
@@ -41,18 +41,30 @@ if ( is_home() ):
 
       <?php else: 
           get_template_part('tmp/no_posts');
-       endif; ?>
+       endif;
+       
+      //  Вывод категорий (рубрик)
+       $cats = get_categories();
+       if ($cats):
+       ?>
       <section class="categories">
         <div class="wrapper">
           <h2 class="categories__h main-heading"> категории </h2>
           <ul class="categories-list">
+          <?php foreach($cats as $cat):
+     
+            $cat_link = get_category_link($cat->cat_ID);
+            ?>
             <li class="category">
-              <a href="category.html" class="category__link">
+              <a href="<?php echo $cat_link; ?>" class="category__link">
                 <img src="img/blog__category_thmb1.jpg" alt="" class="category__thumb">
-                <span class="category__name">Груповые занятия</span>
+                <span class="category__name">
+                <?php echo $cat->name ?>
+                </span>
               </a>
             </li>
-            <li class="category">
+            <?php  endforeach; ?>
+            <!-- <li class="category">
               <a href="category.html" class="category__link">
                 <img src="img/blog__category_thmb2.jpg" alt="" class="category__thumb">
                 <span class="category__name">Кардио</span>
@@ -63,10 +75,11 @@ if ( is_home() ):
                 <img src="img/blog__category_thmb3.jpg" alt="" class="category__thumb">
                 <span class="category__name">Йога</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </section>
+      <?php  endif;?>
     </main>
 
 
